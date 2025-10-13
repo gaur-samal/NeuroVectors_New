@@ -107,7 +107,7 @@ const AIDemos = () => {
                 value={ragQuery}
                 onChange={(e) => setRagQuery(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleRagQuery()}
-                placeholder="Ask a question about AI, RAG, or LLMs..."
+                placeholder="Ask a question about GenAI, RAG, or LLMs..."
                 style={{
                   flex: 1,
                   padding: '16px',

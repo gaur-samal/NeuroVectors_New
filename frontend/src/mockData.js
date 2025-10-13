@@ -68,7 +68,7 @@ export const technologies = [
   "Agentic Frameworks",
   "Model Context Protocol (MCP)",
   "Function Calling & Tools",
-  "Vector Databases (Pinecone, Weaviate)",
+  "Vector Databases (Pinecone, Weaviate, Chroma, Qdrant)",
   "RAG Architectures",
   "Multi-Agent Orchestration"
 ];

@@ -71,7 +71,7 @@ const Footer = () => {
             <h4 className="heading-3" style={{ marginBottom: '20px' }}>Company</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <a href="#about" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>About Us</a>
-              <a href="#demos" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>AI Demos</a>
+              <a href="#demos" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>GenAI Demos</a>
               <a href="#contact" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>Contact</a>
               <a href="#" onClick={handleCareersClick} className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}>Careers</a>
             </div>

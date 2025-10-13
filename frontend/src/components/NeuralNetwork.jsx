@@ -98,8 +98,8 @@ const NeuralNetwork = () => {
   return (
     <div style={{ 
       position: 'relative',
-      width: '600px',
-      height: '600px',
+      width: '700px',
+      height: '700px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'

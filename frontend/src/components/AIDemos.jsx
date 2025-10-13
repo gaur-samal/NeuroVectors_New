@@ -98,7 +98,7 @@ const AIDemos = () => {
               Retrieval Augmented Generation (RAG)
             </h3>
             <p className="body-medium" style={{ marginBottom: '32px', color: 'var(--text-secondary)' }}>
-              Ask questions and get accurate responses grounded in our knowledge base
+              Ask questions and get accurate GenAI responses grounded in our knowledge base
             </p>
             
             <div style={{ display: 'flex', gap: '12px', marginBottom: '32px' }}>

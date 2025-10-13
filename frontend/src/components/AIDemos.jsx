@@ -12,25 +12,44 @@ const AIDemos = () => {
   const [ragQuery, setRagQuery] = useState('');
   const [ragResponse, setRagResponse] = useState(null);
   const [ragLoading, setRagLoading] = useState(false);
+  const [ragLoadingMessage, setRagLoadingMessage] = useState('');
   
   const [agentTask, setAgentTask] = useState('');
   const [agentResponse, setAgentResponse] = useState(null);
   const [agentLoading, setAgentLoading] = useState(false);
+  const [agentLoadingMessage, setAgentLoadingMessage] = useState('');
 
   const handleRagQuery = async () => {
     if (!ragQuery.trim()) return;
     
     setRagLoading(true);
+    setRagLoadingMessage('Waking up GenAI services...');
+    
     try {
+      // Simulate initial delay message
+      setTimeout(() => {
+        if (ragLoading) {
+          setRagLoadingMessage('Processing your query with GenAI...');
+        }
+      }, 2000);
+
       const response = await axios.post(`${API}/rag/query`, {
         query: ragQuery
+      }, {
+        timeout: 30000 // 30 second timeout
       });
       setRagResponse(response.data);
+      toast.success('Response generated successfully!');
     } catch (error) {
       console.error('RAG query error:', error);
-      toast.error('Failed to process query. Please try again.');
+      if (error.code === 'ECONNABORTED') {
+        toast.error('Request timeout. Backend might be starting up. Please try again.');
+      } else {
+        toast.error('Failed to process query. Please try again in a moment.');
+      }
     } finally {
       setRagLoading(false);
+      setRagLoadingMessage('');
     }
   };
 
@@ -38,16 +57,39 @@ const AIDemos = () => {
     if (!agentTask.trim()) return;
     
     setAgentLoading(true);
+    setAgentLoadingMessage('Waking up GenAI services...');
+    
     try {
+      // Simulate initial delay message
+      setTimeout(() => {
+        if (agentLoading) {
+          setAgentLoadingMessage('GenAI agent analyzing your task...');
+        }
+      }, 2000);
+
+      setTimeout(() => {
+        if (agentLoading) {
+          setAgentLoadingMessage('Generating comprehensive insights...');
+        }
+      }, 5000);
+
       const response = await axios.post(`${API}/agent/execute`, {
         task: agentTask
+      }, {
+        timeout: 30000 // 30 second timeout
       });
       setAgentResponse(response.data);
+      toast.success('Task completed successfully!');
     } catch (error) {
       console.error('Agent execution error:', error);
-      toast.error('Failed to execute task. Please try again.');
+      if (error.code === 'ECONNABORTED') {
+        toast.error('Request timeout. Backend might be starting up. Please try again.');
+      } else {
+        toast.error('Failed to execute task. Please try again in a moment.');
+      }
     } finally {
       setAgentLoading(false);
+      setAgentLoadingMessage('');
     }
   };
 

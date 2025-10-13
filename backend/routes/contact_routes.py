@@ -1,18 +1,11 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, EmailStr
-from motor.motor_asyncio import AsyncIOMotorClient
-from datetime import datetime
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
+from firestore_service import FirestoreService
 
 router = APIRouter(prefix="/contact", tags=["Contact"])
 
-# MongoDB connection
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+# Initialize Firestore service
+firestore_service = FirestoreService()
 
 class ContactSubmission(BaseModel):
     name: str
@@ -32,18 +25,16 @@ async def submit_contact(contact: ContactSubmission):
             "name": contact.name,
             "email": contact.email,
             "company": contact.company,
-            "message": contact.message,
-            "created_at": datetime.utcnow(),
-            "status": "new"
+            "message": contact.message
         }
         
-        # Insert into MongoDB
-        result = await db.contacts.insert_one(contact_doc)
+        # Insert into Firestore
+        doc_id = await firestore_service.add_contact(contact_doc)
         
         return {
             "success": True,
             "message": "Thank you for contacting us! We'll get back to you soon.",
-            "id": str(result.inserted_id)
+            "id": doc_id
         }
     
     except Exception as e:

@@ -38,7 +38,7 @@ const Footer = () => {
               style={{ height: '36px', marginBottom: '20px' }}
             />
             <p className="body-medium" style={{ color: 'var(--text-secondary)', marginBottom: '20px' }}>
-              Leading AI consulting and development firm specializing in GenAI solutions and intelligent applications.
+              Leading GenAI consulting and development firm specializing in Generative AI solutions and intelligent applications.
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
               <a href="https://linkedin.com/company/neuralvectors" target="_blank" rel="noopener noreferrer" style={{

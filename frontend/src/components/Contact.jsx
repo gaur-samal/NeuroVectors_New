@@ -199,7 +199,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="body-medium" style={{ marginBottom: '4px' }}>Email</p>
-                  <p className="body-large" style={{ color: 'var(--brand-primary)' }}>contact@neuralvectors.ai</p>
+                  <p className="body-large" style={{ color: 'var(--brand-primary)' }}>info@neuralvectors.in</p>
                 </div>
               </div>
               

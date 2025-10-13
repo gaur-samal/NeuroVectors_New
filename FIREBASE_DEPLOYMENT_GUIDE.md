@@ -10,7 +10,8 @@
 2. **Firebase Project** created
 3. **gcloud CLI** installed - https://cloud.google.com/sdk/docs/install
 4. **Firebase CLI** installed - `npm install -g firebase-tools`
-5. **Docker** installed (for Cloud Run deployment)
+
+**Note**: Docker is NOT required! Google Cloud Build will build your Docker container in the cloud automatically.
 
 ---
 

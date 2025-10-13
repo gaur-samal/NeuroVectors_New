@@ -29,18 +29,7 @@ const Footer = () => {
               Leading AI consulting and development firm specializing in GenAI solutions and intelligent applications.
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <a href="#" style={{
-                width: '40px',
-                height: '40px',
-                background: 'var(--brand-hover)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                transition: 'all 0.3s ease'
-              }} className="dark-hover">
-                <Twitter size={20} color="var(--brand-primary)" />
-              </a>
-              <a href="#" style={{
+              <a href="https://linkedin.com/company/neuralvectors" target="_blank" rel="noopener noreferrer" style={{
                 width: '40px',
                 height: '40px',
                 background: 'var(--brand-hover)',
@@ -50,17 +39,6 @@ const Footer = () => {
                 transition: 'all 0.3s ease'
               }} className="dark-hover">
                 <Linkedin size={20} color="var(--brand-primary)" />
-              </a>
-              <a href="#" style={{
-                width: '40px',
-                height: '40px',
-                background: 'var(--brand-hover)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                transition: 'all 0.3s ease'
-              }} className="dark-hover">
-                <Github size={20} color="var(--brand-primary)" />
               </a>
             </div>
           </div>

@@ -1,51 +1,7 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Brain, Cpu, Sparkles } from 'lucide-react';
 import Lottie from 'lottie-react';
 import '../styles/darkTheme.css';
-
-// AI Robot animation data (lightweight JSON)
-const aiRobotAnimation = {
-  v: "5.7.4",
-  fr: 30,
-  ip: 0,
-  op: 90,
-  w: 800,
-  h: 800,
-  nm: "AI Robot",
-  ddd: 0,
-  assets: [],
-  layers: [
-    {
-      ddd: 0,
-      ind: 1,
-      ty: 4,
-      nm: "Robot Body",
-      sr: 1,
-      ks: {
-        o: { a: 0, k: 100 },
-        r: { 
-          a: 1, 
-          k: [
-            { t: 0, s: [0], e: [5] },
-            { t: 45, s: [5], e: [-5] },
-            { t: 90, s: [-5] }
-          ]
-        },
-        p: { a: 0, k: [400, 400, 0] },
-        a: { a: 0, k: [0, 0, 0] },
-        s: { 
-          a: 1,
-          k: [
-            { t: 0, s: [100, 100], e: [105, 105] },
-            { t: 45, s: [105, 105], e: [100, 100] },
-            { t: 90, s: [100, 100] }
-          ]
-        }
-      },
-      shapes: []
-    }
-  ]
-};
 
 const Hero = () => {
   const scrollToContact = () => {

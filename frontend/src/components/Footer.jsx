@@ -99,7 +99,7 @@ const Footer = () => {
           gap: '20px'
         }}>
           <p className="body-small" style={{ color: 'var(--text-muted)' }}>
-            © 2025 Neural Vectors. All rights reserved.
+            © 2025 NeuralVectors LLP. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '24px' }}>
             <a href="#" className="body-small" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Privacy Policy</a>

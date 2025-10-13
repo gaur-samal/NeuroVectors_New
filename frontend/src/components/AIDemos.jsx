@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Send, Loader2, FileText, Bot } from 'lucide-react';
-import { ragMockResponse, agentMockResponse } from '../mockData';
+import axios from 'axios';
+import { toast } from 'sonner';
 import '../styles/darkTheme.css';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const AIDemos = () => {
   const [activeDemo, setActiveDemo] = useState('rag');
@@ -17,22 +21,34 @@ const AIDemos = () => {
     if (!ragQuery.trim()) return;
     
     setRagLoading(true);
-    // Mock delay to simulate API call
-    setTimeout(() => {
-      setRagResponse(ragMockResponse);
+    try {
+      const response = await axios.post(`${API}/rag/query`, {
+        query: ragQuery
+      });
+      setRagResponse(response.data);
+    } catch (error) {
+      console.error('RAG query error:', error);
+      toast.error('Failed to process query. Please try again.');
+    } finally {
       setRagLoading(false);
-    }, 1500);
+    }
   };
 
   const handleAgentTask = async () => {
     if (!agentTask.trim()) return;
     
     setAgentLoading(true);
-    // Mock delay to simulate agent thinking
-    setTimeout(() => {
-      setAgentResponse(agentMockResponse);
+    try {
+      const response = await axios.post(`${API}/agent/execute`, {
+        task: agentTask
+      });
+      setAgentResponse(response.data);
+    } catch (error) {
+      console.error('Agent execution error:', error);
+      toast.error('Failed to execute task. Please try again.');
+    } finally {
       setAgentLoading(false);
-    }, 2000);
+    }
   };
 
   return (

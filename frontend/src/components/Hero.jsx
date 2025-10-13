@@ -71,138 +71,128 @@ const Hero = () => {
         {/* Right - GenAI Robot Visualization */}
         <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <div style={{ width: '600px', height: '600px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            {/* Animated Robot using Lottie from public CDN */}
-            <Lottie 
-              animationData={{}}
-              loop={true}
-              autoplay={true}
-              style={{ width: '100%', height: '100%' }}
-              onLoadedImages={() => console.log('Animation loaded')}
-              fallback={
-                <div style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '40px'
+            <div style={{ 
+              width: '100%', 
+              height: '100%', 
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '40px'
+            }}>
+              {/* CSS-only animated robot */}
+              <div style={{ position: 'relative' }}>
+                {/* Robot head */}
+                <div style={{
+                  width: '200px',
+                  height: '200px',
+                  background: 'linear-gradient(135deg, var(--brand-primary), #00d4aa)',
+                  borderRadius: '20px',
+                  position: 'relative',
+                  animation: 'float 3s ease-in-out infinite',
+                  boxShadow: '0 20px 60px rgba(0, 255, 209, 0.3)'
                 }}>
-                  {/* CSS-only animated robot */}
-                  <div style={{ position: 'relative' }}>
-                    {/* Robot head */}
-                    <div style={{
-                      width: '200px',
-                      height: '200px',
-                      background: 'linear-gradient(135deg, var(--brand-primary), #00d4aa)',
-                      borderRadius: '20px',
-                      position: 'relative',
-                      animation: 'float 3s ease-in-out infinite',
-                      boxShadow: '0 20px 60px rgba(0, 255, 209, 0.3)'
-                    }}>
-                      {/* Eyes */}
-                      <div style={{ 
-                        position: 'absolute', 
-                        top: '60px', 
-                        left: '40px',
-                        width: '40px',
-                        height: '40px',
-                        background: '#000',
-                        borderRadius: '50%',
-                        animation: 'blink 3s infinite'
-                      }}></div>
-                      <div style={{ 
-                        position: 'absolute', 
-                        top: '60px', 
-                        right: '40px',
-                        width: '40px',
-                        height: '40px',
-                        background: '#000',
-                        borderRadius: '50%',
-                        animation: 'blink 3s infinite'
-                      }}></div>
-                      
-                      {/* Mouth */}
-                      <div style={{
-                        position: 'absolute',
-                        bottom: '50px',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        width: '100px',
-                        height: '10px',
-                        background: '#000',
-                        borderRadius: '5px',
-                        animation: 'talk 2s infinite'
-                      }}></div>
-                      
-                      {/* Antenna */}
-                      <div style={{
-                        position: 'absolute',
-                        top: '-30px',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        width: '4px',
-                        height: '30px',
-                        background: 'var(--brand-primary)'
-                      }}>
-                        <div style={{
-                          position: 'absolute',
-                          top: '-10px',
-                          left: '50%',
-                          transform: 'translateX(-50%)',
-                          width: '16px',
-                          height: '16px',
-                          background: 'var(--brand-primary)',
-                          borderRadius: '50%',
-                          animation: 'pulse 1.5s infinite',
-                          boxShadow: '0 0 20px var(--brand-primary)'
-                        }}></div>
-                      </div>
-                    </div>
-                    
-                    {/* Floating icons around robot */}
-                    <Brain 
-                      size={48} 
-                      style={{
-                        position: 'absolute',
-                        top: '-40px',
-                        right: '-60px',
-                        color: 'var(--brand-primary)',
-                        animation: 'orbit1 4s linear infinite'
-                      }}
-                    />
-                    <Cpu 
-                      size={48} 
-                      style={{
-                        position: 'absolute',
-                        bottom: '-40px',
-                        left: '-60px',
-                        color: 'var(--brand-primary)',
-                        animation: 'orbit2 5s linear infinite'
-                      }}
-                    />
-                    <Sparkles 
-                      size={48} 
-                      style={{
-                        position: 'absolute',
-                        top: '50%',
-                        right: '-80px',
-                        color: 'var(--brand-primary)',
-                        animation: 'orbit3 3.5s linear infinite'
-                      }}
-                    />
-                  </div>
+                  {/* Eyes */}
+                  <div style={{ 
+                    position: 'absolute', 
+                    top: '60px', 
+                    left: '40px',
+                    width: '40px',
+                    height: '40px',
+                    background: '#000',
+                    borderRadius: '50%',
+                    animation: 'blink 3s infinite'
+                  }}></div>
+                  <div style={{ 
+                    position: 'absolute', 
+                    top: '60px', 
+                    right: '40px',
+                    width: '40px',
+                    height: '40px',
+                    background: '#000',
+                    borderRadius: '50%',
+                    animation: 'blink 3s infinite'
+                  }}></div>
                   
-                  <p style={{ 
-                    color: 'var(--text-secondary)', 
-                    fontSize: '14px',
-                    textAlign: 'center'
+                  {/* Mouth */}
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '50px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '100px',
+                    height: '10px',
+                    background: '#000',
+                    borderRadius: '5px',
+                    animation: 'talk 2s infinite'
+                  }}></div>
+                  
+                  {/* Antenna */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '-30px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '4px',
+                    height: '30px',
+                    background: 'var(--brand-primary)'
                   }}>
-                    Powered by Advanced GenAI
-                  </p>
+                    <div style={{
+                      position: 'absolute',
+                      top: '-10px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      width: '16px',
+                      height: '16px',
+                      background: 'var(--brand-primary)',
+                      borderRadius: '50%',
+                      animation: 'pulse 1.5s infinite',
+                      boxShadow: '0 0 20px var(--brand-primary)'
+                    }}></div>
+                  </div>
                 </div>
-              }
-            />
+                
+                {/* Floating icons around robot */}
+                <Brain 
+                  size={48} 
+                  style={{
+                    position: 'absolute',
+                    top: '-40px',
+                    right: '-60px',
+                    color: 'var(--brand-primary)',
+                    animation: 'orbit1 4s linear infinite'
+                  }}
+                />
+                <Cpu 
+                  size={48} 
+                  style={{
+                    position: 'absolute',
+                    bottom: '-40px',
+                    left: '-60px',
+                    color: 'var(--brand-primary)',
+                    animation: 'orbit2 5s linear infinite'
+                  }}
+                />
+                <Sparkles 
+                  size={48} 
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    right: '-80px',
+                    color: 'var(--brand-primary)',
+                    animation: 'orbit3 3.5s linear infinite'
+                  }}
+                />
+              </div>
+              
+              <p style={{ 
+                color: 'var(--text-secondary)', 
+                fontSize: '14px',
+                textAlign: 'center'
+              }}>
+                Powered by Advanced GenAI
+              </p>
+            </div>
           </div>
         </div>
         

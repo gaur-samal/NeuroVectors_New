@@ -113,78 +113,116 @@ const NeuralNetwork = () => {
         }}
       />
       
-      {/* Center Digital Brain/ML Visualization */}
+      {/* Center AI Processor Chip */}
       <div style={{
         position: 'absolute',
-        width: '160px',
-        height: '160px',
-        background: 'radial-gradient(circle, rgba(0, 255, 209, 0.4), rgba(0, 0, 0, 0))',
-        borderRadius: '50%',
+        width: '180px',
+        height: '180px',
+        background: 'linear-gradient(135deg, rgba(0, 255, 209, 0.2), rgba(0, 212, 170, 0.1))',
+        borderRadius: '20px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         animation: 'pulse-glow 2s ease-in-out infinite',
-        boxShadow: '0 0 80px rgba(0, 255, 209, 0.6)',
-        zIndex: 10
+        boxShadow: '0 0 100px rgba(0, 255, 209, 0.5), inset 0 0 60px rgba(0, 255, 209, 0.1)',
+        border: '2px solid rgba(0, 255, 209, 0.5)',
+        zIndex: 10,
+        transform: 'rotate(45deg)'
       }}>
-        {/* Digital Brain/ML Icon */}
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-          {/* Central neural network core */}
-          <circle cx="50" cy="50" r="35" stroke="#00FFD1" strokeWidth="2" fill="rgba(0, 255, 209, 0.1)" />
-          <circle cx="50" cy="50" r="25" stroke="#00FFD1" strokeWidth="1.5" fill="rgba(0, 255, 209, 0.05)" />
-          <circle cx="50" cy="50" r="15" stroke="#00FFD1" strokeWidth="1" fill="rgba(0, 255, 209, 0.15)" />
-          
-          {/* Neural nodes */}
-          <circle cx="50" cy="20" r="4" fill="#00FFD1" />
-          <circle cx="80" cy="50" r="4" fill="#00FFD1" />
-          <circle cx="50" cy="80" r="4" fill="#00FFD1" />
-          <circle cx="20" cy="50" r="4" fill="#00FFD1" />
-          <circle cx="70" cy="30" r="3" fill="#00FFD1" />
-          <circle cx="70" cy="70" r="3" fill="#00FFD1" />
-          <circle cx="30" cy="70" r="3" fill="#00FFD1" />
-          <circle cx="30" cy="30" r="3" fill="#00FFD1" />
-          
-          {/* Connection lines */}
-          <line x1="50" y1="50" x2="50" y2="20" stroke="#00FFD1" strokeWidth="1" opacity="0.5" />
-          <line x1="50" y1="50" x2="80" y2="50" stroke="#00FFD1" strokeWidth="1" opacity="0.5" />
-          <line x1="50" y1="50" x2="50" y2="80" stroke="#00FFD1" strokeWidth="1" opacity="0.5" />
-          <line x1="50" y1="50" x2="20" y2="50" stroke="#00FFD1" strokeWidth="1" opacity="0.5" />
-          <line x1="50" y1="50" x2="70" y2="30" stroke="#00FFD1" strokeWidth="0.5" opacity="0.3" />
-          <line x1="50" y1="50" x2="70" y2="70" stroke="#00FFD1" strokeWidth="0.5" opacity="0.3" />
-          <line x1="50" y1="50" x2="30" y2="70" stroke="#00FFD1" strokeWidth="0.5" opacity="0.3" />
-          <line x1="50" y1="50" x2="30" y2="30" stroke="#00FFD1" strokeWidth="0.5" opacity="0.3" />
-          
-          {/* Pulsing central dot */}
-          <circle cx="50" cy="50" r="5" fill="#00FFD1">
-            <animate attributeName="r" values="3;7;3" dur="2s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
-          </circle>
-          
-          {/* Orbiting data points */}
-          <circle cx="50" cy="50" r="3" fill="#00FFD1">
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              from="0 50 50"
-              to="360 50 50"
-              dur="4s"
-              repeatCount="indefinite"
-            />
-            <animate attributeName="cx" values="50;85;50" dur="4s" repeatCount="indefinite" />
-          </circle>
-        </svg>
-        
-        {/* ML Text */}
         <div style={{
-          position: 'absolute',
-          bottom: '-30px',
-          fontSize: '12px',
-          fontWeight: '600',
-          color: 'var(--brand-primary)',
-          letterSpacing: '2px'
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transform: 'rotate(-45deg)'
         }}>
-          ML CORE
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+            {/* Outer circuit ring */}
+            <circle cx="60" cy="60" r="50" stroke="#00FFD1" strokeWidth="1" fill="none" opacity="0.4">
+              <animate attributeName="r" values="50;52;50" dur="3s" repeatCount="indefinite" />
+            </circle>
+            
+            {/* Middle circuit ring */}
+            <circle cx="60" cy="60" r="35" stroke="#00FFD1" strokeWidth="1.5" fill="none" opacity="0.6">
+              <animate attributeName="stroke-dasharray" values="0,220;220,0;0,220" dur="4s" repeatCount="indefinite" />
+            </circle>
+            
+            {/* Inner core */}
+            <circle cx="60" cy="60" r="20" fill="url(#glowGradient)" />
+            
+            {/* Circuit paths radiating out */}
+            <path d="M60,40 L60,10" stroke="#00FFD1" strokeWidth="2" opacity="0.7">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+            </path>
+            <path d="M80,60 L110,60" stroke="#00FFD1" strokeWidth="2" opacity="0.7">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.5s" repeatCount="indefinite" />
+            </path>
+            <path d="M60,80 L60,110" stroke="#00FFD1" strokeWidth="2" opacity="0.7">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1s" repeatCount="indefinite" />
+            </path>
+            <path d="M40,60 L10,60" stroke="#00FFD1" strokeWidth="2" opacity="0.7">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.5s" repeatCount="indefinite" />
+            </path>
+            
+            {/* Corner circuit nodes */}
+            <circle cx="75" cy="45" r="3" fill="#00FFD1">
+              <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="75" cy="75" r="3" fill="#00FFD1">
+              <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.4s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="45" cy="75" r="3" fill="#00FFD1">
+              <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.8s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="45" cy="45" r="3" fill="#00FFD1">
+              <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="1.2s" repeatCount="indefinite" />
+            </circle>
+            
+            {/* Central processing indicators */}
+            <circle cx="60" cy="60" r="12" fill="none" stroke="#00FFD1" strokeWidth="1">
+              <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite" />
+            </circle>
+            
+            {/* Rotating outer ring */}
+            <circle cx="60" cy="60" r="45" fill="none" stroke="#00FFD1" strokeWidth="0.5" strokeDasharray="5,5" opacity="0.4">
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 60 60"
+                to="360 60 60"
+                dur="10s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            
+            {/* Data flow particles */}
+            <circle cx="60" cy="30" r="2" fill="#00FFD1">
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 60 60"
+                to="360 60 60"
+                dur="3s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            
+            <defs>
+              <radialGradient id="glowGradient">
+                <stop offset="0%" stopColor="#00FFD1" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#00FFD1" stopOpacity="0.2" />
+              </radialGradient>
+            </defs>
+          </svg>
         </div>
+        
+        {/* Corner accents */}
+        <div style={{ position: 'absolute', top: '-3px', left: '-3px', width: '15px', height: '15px', borderTop: '3px solid #00FFD1', borderLeft: '3px solid #00FFD1' }}></div>
+        <div style={{ position: 'absolute', top: '-3px', right: '-3px', width: '15px', height: '15px', borderTop: '3px solid #00FFD1', borderRight: '3px solid #00FFD1' }}></div>
+        <div style={{ position: 'absolute', bottom: '-3px', left: '-3px', width: '15px', height: '15px', borderBottom: '3px solid #00FFD1', borderLeft: '3px solid #00FFD1' }}></div>
+        <div style={{ position: 'absolute', bottom: '-3px', right: '-3px', width: '15px', height: '15px', borderBottom: '3px solid #00FFD1', borderRight: '3px solid #00FFD1' }}></div>
       </div>
       
       <style>{`

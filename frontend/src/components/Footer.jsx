@@ -4,6 +4,18 @@ import '../styles/darkTheme.css';
 import { toast } from 'sonner';
 
 const Footer = () => {
+  const handleCareersClick = (e) => {
+    e.preventDefault();
+    toast.success('🚀 Exciting things are brewing! We\'re just getting started. Stay tuned for amazing opportunities!', {
+      duration: 5000,
+      style: {
+        background: 'var(--bg-secondary)',
+        color: 'var(--text-primary)',
+        border: '1px solid var(--brand-primary)'
+      }
+    });
+  };
+
   return (
     <footer style={{
       background: 'var(--bg-primary)',

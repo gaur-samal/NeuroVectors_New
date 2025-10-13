@@ -251,8 +251,9 @@ const AIDemos = () => {
                 type="text"
                 value={agentTask}
                 onChange={(e) => setAgentTask(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleAgentTask()}
+                onKeyPress={(e) => e.key === 'Enter' && !agentLoading && handleAgentTask()}
                 placeholder="Give the agent a task (e.g., 'Analyze market trends')..."
+                disabled={agentLoading}
                 style={{
                   flex: 1,
                   padding: '16px',
@@ -260,7 +261,8 @@ const AIDemos = () => {
                   border: '1px solid var(--border-subtle)',
                   color: 'var(--text-primary)',
                   fontSize: '16px',
-                  outline: 'none'
+                  outline: 'none',
+                  opacity: agentLoading ? 0.6 : 1
                 }}
               />
               <button 
@@ -270,9 +272,33 @@ const AIDemos = () => {
                 style={{ minWidth: '120px' }}
               >
                 {agentLoading ? <Loader2 size={20} className="spin" /> : <Send size={20} />}
-                {agentLoading ? 'Running...' : 'Execute'}
+                {agentLoading ? 'Executing...' : 'Execute'}
               </button>
             </div>
+            
+            {agentLoading && (
+              <div style={{
+                padding: '24px',
+                background: 'var(--brand-hover)',
+                border: '1px solid var(--brand-primary)',
+                marginBottom: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px'
+              }}>
+                <div style={{
+                  width: '24px',
+                  height: '24px',
+                  border: '3px solid var(--brand-primary)',
+                  borderTopColor: 'transparent',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite'
+                }}></div>
+                <p className="body-medium" style={{ color: 'var(--brand-primary)' }}>
+                  {agentLoadingMessage || 'Executing...'}
+                </p>
+              </div>
+            )}
             
             {agentResponse && (
               <div style={{ background: 'var(--bg-primary)', padding: '24px', border: '1px solid var(--brand-primary)' }}>

@@ -132,15 +132,15 @@ const NeuralNetwork = () => {
         padding: '10px'
       }}>
         <img 
-          src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=300&h=300&fit=crop" 
+          src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200&h=200&fit=crop&q=80" 
           alt="AI Brain"
+          loading="lazy"
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
             borderRadius: '50%',
-            filter: 'brightness(1.2) contrast(1.1)',
-            mixBlendMode: 'screen'
+            filter: 'brightness(1.1)'
           }}
         />
       </div>

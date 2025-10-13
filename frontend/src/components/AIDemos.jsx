@@ -75,33 +75,48 @@ const AIDemos = () => {
     setAgentLoading(true);
     setAgentLoadingMessage('Waking up GenAI services...');
     
+    // Log for debugging
+    console.log('Backend URL:', BACKEND_URL);
+    console.log('API endpoint:', `${API}/agent/execute`);
+    
     try {
       // Simulate initial delay message
-      setTimeout(() => {
-        if (agentLoading) {
-          setAgentLoadingMessage('GenAI agent analyzing your task...');
-        }
+      const timer1 = setTimeout(() => {
+        setAgentLoadingMessage('GenAI agent analyzing your task...');
       }, 2000);
 
-      setTimeout(() => {
-        if (agentLoading) {
-          setAgentLoadingMessage('Generating comprehensive insights...');
-        }
+      const timer2 = setTimeout(() => {
+        setAgentLoadingMessage('Generating comprehensive insights...');
       }, 5000);
 
       const response = await axios.post(`${API}/agent/execute`, {
         task: agentTask
       }, {
-        timeout: 30000 // 30 second timeout
+        timeout: 30000, // 30 second timeout
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
+      
+      clearTimeout(timer1);
+      clearTimeout(timer2);
       setAgentResponse(response.data);
       toast.success('Task completed successfully!');
     } catch (error) {
-      console.error('Agent execution error:', error);
+      console.error('Agent execution full error:', error);
+      console.error('Error response:', error.response);
+      console.error('Error message:', error.message);
+      
       if (error.code === 'ECONNABORTED') {
-        toast.error('Request timeout. Backend might be starting up. Please try again.');
+        toast.error('Request timeout. Backend might be starting up. Please try again in 10 seconds.');
+      } else if (error.response) {
+        // Server responded with error
+        toast.error(`Server error: ${error.response.status}. Please check backend logs.`);
+      } else if (error.request) {
+        // Request made but no response
+        toast.error('Cannot reach backend. Please check if backend is deployed and REACT_APP_BACKEND_URL is correct.');
       } else {
-        toast.error('Failed to execute task. Please try again in a moment.');
+        toast.error('Failed to execute task. Error: ' + error.message);
       }
     } finally {
       setAgentLoading(false);

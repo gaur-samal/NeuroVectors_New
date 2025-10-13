@@ -71,8 +71,16 @@ const Hero = () => {
         </div>
         
         {/* Right - Dynamic Neural Network Visualization */}
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <NeuralNetwork />
+        <div style={{ 
+          flex: 1, 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center',
+          minHeight: '700px'
+        }}>
+          <div style={{ transform: 'scale(1.2)' }}>
+            <NeuralNetwork />
+          </div>
         </div>
       </div>
     </section>

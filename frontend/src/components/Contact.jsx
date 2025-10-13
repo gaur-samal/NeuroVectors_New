@@ -28,11 +28,26 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await axios.post(`${API}/contact/submit`, formData);
-      if (response.data.success) {
-        toast.success(response.data.message);
-        setFormData({ name: '', email: '', company: '', message: '' });
-      }
+      // Send to AppScript for email notification
+      const appScriptURL = 'https://script.google.com/macros/s/AKfycbyHhHAZWJe8BFadUfJOe8AkhlsfLzaSNxJUu2nQUPd3DtbI8qq9xpzxrZvtPh92nyuCyQ/exec';
+      
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('company', formData.company);
+      formDataToSend.append('message', formData.message);
+      
+      await fetch(appScriptURL, {
+        method: 'POST',
+        body: formDataToSend,
+        mode: 'no-cors'
+      });
+      
+      // Also save to backend/Firestore
+      await axios.post(`${API}/contact/submit`, formData);
+      
+      toast.success('Message sent successfully! We\'ll get back to you soon.');
+      setFormData({ name: '', email: '', company: '', message: '' });
     } catch (error) {
       console.error('Contact submission error:', error);
       toast.error('Failed to send message. Please try again.');

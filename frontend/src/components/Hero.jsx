@@ -38,11 +38,11 @@ const Hero = () => {
         <div style={{ flex: 1 }}>
           <h1 className="display-huge" style={{ marginBottom: '24px' }}>
             Transform Your Business with
-            <span style={{ color: 'var(--brand-primary)' }}> Intelligent AI Solutions</span>
+            <span style={{ color: 'var(--brand-primary)' }}> Intelligent GenAI Solutions</span>
           </h1>
           
           <p className="body-large" style={{ marginBottom: '40px', maxWidth: '600px' }}>
-            Leading-edge GenAI consulting, custom AI agent development, and enterprise-grade solutions powered by GPT-5, Claude 3.7, and advanced agentic frameworks.
+            Leading-edge GenAI consulting, custom GenAI agent development, and enterprise-grade solutions powered by GPT-5, Claude 3.7, and advanced agentic frameworks.
           </p>
           
           <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>

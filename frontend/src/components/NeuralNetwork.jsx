@@ -8,8 +8,8 @@ const NeuralNetwork = () => {
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
-    canvas.width = 600;
-    canvas.height = 600;
+    canvas.width = 700;
+    canvas.height = 700;
 
     // Particle class
     class Particle {

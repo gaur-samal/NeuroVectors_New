@@ -172,10 +172,10 @@ const AIDemos = () => {
             margin: '0 auto'
           }}>
             <h3 className="heading-2" style={{ marginBottom: '16px' }}>
-              Multi-Step AI Agent
+              Multi-Step GenAI Agent
             </h3>
             <p className="body-medium" style={{ marginBottom: '32px', color: 'var(--text-secondary)' }}>
-              Watch an AI agent break down complex tasks and execute them step by step
+              Watch a GenAI agent break down complex tasks and execute them step by step
             </p>
             
             <div style={{ display: 'flex', gap: '12px', marginBottom: '32px' }}>

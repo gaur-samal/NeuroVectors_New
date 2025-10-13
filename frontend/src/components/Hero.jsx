@@ -13,10 +13,11 @@ const Hero = () => {
 
   return (
     <section style={{
-      minHeight: '100vh',
+      minHeight: '110vh',
       display: 'flex',
       alignItems: 'center',
       paddingTop: '80px',
+      paddingBottom: '60px',
       position: 'relative',
       overflow: 'hidden',
       background: 'var(--bg-primary)'

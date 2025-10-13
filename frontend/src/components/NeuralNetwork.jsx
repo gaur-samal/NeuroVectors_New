@@ -113,117 +113,102 @@ const NeuralNetwork = () => {
         }}
       />
       
-      {/* Center AI Processor Chip */}
+      {/* Center AI Brain with Robotic Hands */}
       <div style={{
         position: 'absolute',
-        width: '180px',
-        height: '180px',
-        background: 'linear-gradient(135deg, rgba(0, 255, 209, 0.2), rgba(0, 212, 170, 0.1))',
-        borderRadius: '20px',
+        width: '220px',
+        height: '220px',
+        background: 'radial-gradient(circle, rgba(0, 255, 209, 0.3), rgba(0, 0, 0, 0))',
+        borderRadius: '50%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         animation: 'pulse-glow 2s ease-in-out infinite',
-        boxShadow: '0 0 100px rgba(0, 255, 209, 0.5), inset 0 0 60px rgba(0, 255, 209, 0.1)',
-        border: '2px solid rgba(0, 255, 209, 0.5)',
+        boxShadow: '0 0 100px rgba(0, 255, 209, 0.5)',
         zIndex: 10,
-        transform: 'rotate(45deg)'
+        overflow: 'visible'
       }}>
         <div style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          transform: 'rotate(-45deg)'
+          position: 'relative',
+          width: '200px',
+          height: '200px',
+          borderRadius: '50%',
+          overflow: 'hidden',
+          border: '3px solid rgba(0, 255, 209, 0.6)',
+          boxShadow: 'inset 0 0 40px rgba(0, 255, 209, 0.3)'
         }}>
-          <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-            {/* Outer circuit ring */}
-            <circle cx="60" cy="60" r="50" stroke="#00FFD1" strokeWidth="1" fill="none" opacity="0.4">
-              <animate attributeName="r" values="50;52;50" dur="3s" repeatCount="indefinite" />
-            </circle>
-            
-            {/* Middle circuit ring */}
-            <circle cx="60" cy="60" r="35" stroke="#00FFD1" strokeWidth="1.5" fill="none" opacity="0.6">
-              <animate attributeName="stroke-dasharray" values="0,220;220,0;0,220" dur="4s" repeatCount="indefinite" />
-            </circle>
-            
-            {/* Inner core */}
-            <circle cx="60" cy="60" r="20" fill="url(#glowGradient)" />
-            
-            {/* Circuit paths radiating out */}
-            <path d="M60,40 L60,10" stroke="#00FFD1" strokeWidth="2" opacity="0.7">
-              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
-            </path>
-            <path d="M80,60 L110,60" stroke="#00FFD1" strokeWidth="2" opacity="0.7">
-              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.5s" repeatCount="indefinite" />
-            </path>
-            <path d="M60,80 L60,110" stroke="#00FFD1" strokeWidth="2" opacity="0.7">
-              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1s" repeatCount="indefinite" />
-            </path>
-            <path d="M40,60 L10,60" stroke="#00FFD1" strokeWidth="2" opacity="0.7">
-              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.5s" repeatCount="indefinite" />
-            </path>
-            
-            {/* Corner circuit nodes */}
-            <circle cx="75" cy="45" r="3" fill="#00FFD1">
-              <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="75" cy="75" r="3" fill="#00FFD1">
-              <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.4s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="45" cy="75" r="3" fill="#00FFD1">
-              <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="0.8s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="45" cy="45" r="3" fill="#00FFD1">
-              <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" begin="1.2s" repeatCount="indefinite" />
-            </circle>
-            
-            {/* Central processing indicators */}
-            <circle cx="60" cy="60" r="12" fill="none" stroke="#00FFD1" strokeWidth="1">
-              <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite" />
-              <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite" />
-            </circle>
-            
-            {/* Rotating outer ring */}
-            <circle cx="60" cy="60" r="45" fill="none" stroke="#00FFD1" strokeWidth="0.5" strokeDasharray="5,5" opacity="0.4">
-              <animateTransform
-                attributeName="transform"
-                type="rotate"
-                from="0 60 60"
-                to="360 60 60"
-                dur="10s"
-                repeatCount="indefinite"
-              />
-            </circle>
-            
-            {/* Data flow particles */}
-            <circle cx="60" cy="30" r="2" fill="#00FFD1">
-              <animateTransform
-                attributeName="transform"
-                type="rotate"
-                from="0 60 60"
-                to="360 60 60"
-                dur="3s"
-                repeatCount="indefinite"
-              />
-            </circle>
-            
-            <defs>
-              <radialGradient id="glowGradient">
-                <stop offset="0%" stopColor="#00FFD1" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#00FFD1" stopOpacity="0.2" />
-              </radialGradient>
-            </defs>
-          </svg>
+          <img 
+            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=400&fit=crop&q=85" 
+            alt="AI Brain Technology"
+            loading="lazy"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              filter: 'brightness(1.1) contrast(1.2) hue-rotate(180deg)',
+              mixBlendMode: 'lighten'
+            }}
+          />
+          
+          {/* Overlay glowing effect */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'radial-gradient(circle, rgba(0, 255, 209, 0.2), transparent)',
+            pointerEvents: 'none'
+          }}></div>
+          
+          {/* Animated scan lines */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '2px',
+            background: 'linear-gradient(90deg, transparent, #00FFD1, transparent)',
+            animation: 'scan 3s linear infinite'
+          }}></div>
         </div>
         
-        {/* Corner accents */}
-        <div style={{ position: 'absolute', top: '-3px', left: '-3px', width: '15px', height: '15px', borderTop: '3px solid #00FFD1', borderLeft: '3px solid #00FFD1' }}></div>
-        <div style={{ position: 'absolute', top: '-3px', right: '-3px', width: '15px', height: '15px', borderTop: '3px solid #00FFD1', borderRight: '3px solid #00FFD1' }}></div>
-        <div style={{ position: 'absolute', bottom: '-3px', left: '-3px', width: '15px', height: '15px', borderBottom: '3px solid #00FFD1', borderLeft: '3px solid #00FFD1' }}></div>
-        <div style={{ position: 'absolute', bottom: '-3px', right: '-3px', width: '15px', height: '15px', borderBottom: '3px solid #00FFD1', borderRight: '3px solid #00FFD1' }}></div>
+        {/* Orbiting tech rings */}
+        <svg style={{
+          position: 'absolute',
+          width: '240px',
+          height: '240px',
+          pointerEvents: 'none'
+        }} viewBox="0 0 240 240">
+          <circle cx="120" cy="120" r="110" fill="none" stroke="#00FFD1" strokeWidth="1" opacity="0.3" strokeDasharray="10,10">
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 120 120"
+              to="360 120 120"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle cx="120" cy="120" r="115" fill="none" stroke="#00FFD1" strokeWidth="0.5" opacity="0.4" strokeDasharray="5,15">
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="360 120 120"
+              to="0 120 120"
+              dur="12s"
+              repeatCount="indefinite"
+            />
+          </circle>
+        </svg>
       </div>
+      
+      <style>{`
+        @keyframes scan {
+          0% { top: 0; }
+          100% { top: 100%; }
+        }
+      `}</style>
       
       <style>{`
         @keyframes pulse-glow {

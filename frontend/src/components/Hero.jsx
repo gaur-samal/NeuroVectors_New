@@ -79,17 +79,35 @@ const Hero = () => {
                 width: '100%', 
                 height: '100%', 
                 display: 'flex', 
+                flexDirection: 'column',
                 alignItems: 'center', 
                 justifyContent: 'center',
-                color: 'var(--text-muted)'
+                color: 'var(--text-muted)',
+                gap: '16px'
               }}>
-                Loading 3D Scene...
+                <div style={{
+                  width: '48px',
+                  height: '48px',
+                  border: '3px solid var(--brand-primary)',
+                  borderTopColor: 'transparent',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite'
+                }}></div>
+                <p>Loading 3D Scene...</p>
               </div>
             }>
-              <Spline scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode" />
+              <Spline 
+                scene="https://prod.spline.design/NbVmy6DPLhY-5Lvg/scene.splinecode"
+                onLoad={() => console.log('Spline loaded')}
+              />
             </Suspense>
           </div>
         </div>
+        <style>{`
+          @keyframes spin {
+            to { transform: rotate(360deg); }
+          }
+        `}</style>
       </div>
     </section>
   );

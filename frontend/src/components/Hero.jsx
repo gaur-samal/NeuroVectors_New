@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowRight, Brain, Cpu, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import NeuralNetwork from './NeuralNetwork';
 import '../styles/darkTheme.css';
 
 const Hero = () => {

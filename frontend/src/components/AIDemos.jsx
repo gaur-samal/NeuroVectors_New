@@ -60,10 +60,10 @@ const AIDemos = () => {
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '100px' }}>
           <h2 className="display-large" style={{ marginBottom: '24px' }}>
-            Experience <span style={{ color: 'var(--brand-primary)' }}>AI in Action</span>
+            Experience <span style={{ color: 'var(--brand-primary)' }}>GenAI in Action</span>
           </h2>
           <p className="body-large" style={{ color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-            Try our live RAG system and AI agent demonstrations powered by advanced LLMs
+            Try our live RAG system and GenAI agent demonstrations powered by advanced LLMs
           </p>
         </div>
         

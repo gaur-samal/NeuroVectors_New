@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Mail, MapPin, Phone } from 'lucide-react';
+import { Send, Mail, MapPin } from 'lucide-react';
 import '../styles/darkTheme.css';
 import { toast } from 'sonner';
 

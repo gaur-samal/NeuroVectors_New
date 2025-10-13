@@ -35,10 +35,7 @@ const NeuralNetwork = () => {
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = '#00FFD1';
         ctx.fill();
-        
-        // Add glow effect
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = '#00FFD1';
+        // Removed shadow blur for better performance
       }
     }
 

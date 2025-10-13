@@ -138,14 +138,14 @@ const NeuralNetwork = () => {
           boxShadow: 'inset 0 0 40px rgba(0, 255, 209, 0.3)'
         }}>
           <img 
-            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=400&fit=crop&q=85" 
+            src="https://images.unsplash.com/photo-1737505599159-5ffc1dcbc08f?w=400&h=400&fit=crop&q=85" 
             alt="AI Brain Technology"
             loading="lazy"
             style={{
               width: '100%',
               height: '100%',
               objectFit: 'cover',
-              filter: 'brightness(1.1) contrast(1.2) hue-rotate(180deg)',
+              filter: 'brightness(1.2) contrast(1.3) saturate(1.1)',
               mixBlendMode: 'lighten'
             }}
           />

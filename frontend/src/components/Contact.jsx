@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Send, Mail, MapPin } from 'lucide-react';
+import axios from 'axios';
 import '../styles/darkTheme.css';
 import { toast } from 'sonner';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,12 +27,18 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Mock submission
-    setTimeout(() => {
-      toast.success('Message sent successfully! We\'ll get back to you soon.');
-      setFormData({ name: '', email: '', company: '', message: '' });
+    try {
+      const response = await axios.post(`${API}/contact/submit`, formData);
+      if (response.data.success) {
+        toast.success(response.data.message);
+        setFormData({ name: '', email: '', company: '', message: '' });
+      }
+    } catch (error) {
+      console.error('Contact submission error:', error);
+      toast.error('Failed to send message. Please try again.');
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (

@@ -78,11 +78,11 @@ class AIService:
             chat = LlmChat(
                 api_key=self.api_key,
                 session_id=f"agent-{asyncio.current_task().get_name()}",
-                system_message="You are an expert AI agent that breaks down complex tasks and provides detailed analysis. Provide actionable insights, data-driven recommendations, and strategic guidance."
+                system_message="You are an expert AI agent that provides direct, absolute answers without explanations or context. Be concise, factual, and to the point. Provide specific numbers, percentages, and actionable insights in bullet points. No lengthy explanations."
             ).with_model("gemini", "gemini-2.0-flash")
             
-            # Enhance the task prompt for better agent response
-            enhanced_prompt = f"As an AI agent, analyze the following task and provide a comprehensive response with specific insights, metrics, and recommendations:\n\nTask: {task}\n\nProvide a detailed professional analysis."
+            # Enhance the task prompt for absolute answers
+            enhanced_prompt = f"Task: {task}\n\nProvide a direct, concise answer with key facts and metrics in bullet points. No explanations or context needed. Just the essential information."
             
             user_message = UserMessage(text=enhanced_prompt)
             result = await chat.send_message(user_message)

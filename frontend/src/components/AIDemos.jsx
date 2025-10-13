@@ -81,7 +81,7 @@ const AIDemos = () => {
             onClick={() => setActiveDemo('agent')}
           >
             <Bot size={20} />
-            AI Agent Demo
+            GenAI Agent Demo
           </button>
         </div>
         

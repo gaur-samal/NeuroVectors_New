@@ -17,7 +17,7 @@
 
 ## 📋 Before Running
 
-### 1. Install Tools
+### 1. Install Tools (Only These 2!)
 
 ```bash
 # Install gcloud CLI
@@ -30,6 +30,8 @@ npm install -g firebase-tools
 gcloud auth login
 firebase login
 ```
+
+**Note**: No Docker needed! Cloud Build handles everything in the cloud.
 
 ### 2. Create Google Cloud Project
 

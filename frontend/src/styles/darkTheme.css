@@ -221,7 +221,7 @@ body {
 }
 
 .dark-nav-link {
-  color: var(--text-muted);
+  color: var(--text-primary);
   text-decoration: none;
   font-size: 18px;
   font-weight: 400;
@@ -229,11 +229,11 @@ body {
 }
 
 .dark-nav-link:hover {
-  color: var(--text-primary);
+  color: var(--brand-primary);
 }
 
 .dark-nav-link.active {
-  color: var(--brand-active);
+  color: var(--brand-primary);
 }
 
 /* Dark Container with Grid Pattern */

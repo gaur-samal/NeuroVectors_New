@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Linkedin } from 'lucide-react';
+import { Linkedin, X } from 'lucide-react';
 import '../styles/darkTheme.css';
 import { toast } from 'sonner';
 
 const Footer = () => {
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
+  const [showTermsOfService, setShowTermsOfService] = useState(false);
+
   const handleCareersClick = (e) => {
     e.preventDefault();
     toast.success('🚀 Exciting things are brewing! We\'re just getting started. Stay tuned for amazing opportunities!', {

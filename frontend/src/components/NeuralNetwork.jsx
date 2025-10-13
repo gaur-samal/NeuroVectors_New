@@ -50,10 +50,19 @@ const NeuralNetwork = () => {
       particles.push(new Particle());
     }
 
-    // Animation loop
+    // Animation loop with performance optimization
+    let frameCount = 0;
     function animate() {
+      frameCount++;
+      
+      // Skip frames for better performance (render every other frame)
+      if (frameCount % 2 === 0) {
+        requestAnimationFrame(animate);
+        return;
+      }
+      
       // Fade effect for trails
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // Increased fade for less trails
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles

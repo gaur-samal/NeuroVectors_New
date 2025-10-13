@@ -59,10 +59,10 @@ const Footer = () => {
           <div>
             <h4 className="heading-3" style={{ marginBottom: '20px' }}>Services</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <a href="#services" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>AI Strategy & Consulting</a>
+              <a href="#services" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>GenAI Strategy & Consulting</a>
               <a href="#services" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>Training & Workshops</a>
-              <a href="#services" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>AI Application Development</a>
-              <a href="#services" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>Custom AI Agents</a>
+              <a href="#services" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>GenAI Application Development</a>
+              <a href="#services" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>Custom GenAI Agents</a>
             </div>
           </div>
           

@@ -71,10 +71,11 @@ EOF
 ### Step 2: Build and Deploy to Cloud Run
 
 ```bash
-# Build Docker image
+# This command builds the Docker image IN THE CLOUD (no local Docker needed!)
+# Google Cloud Build reads your Dockerfile and builds it on Google's servers
 gcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/neural-vectors-backend
 
-# Deploy to Cloud Run
+# Deploy the built image to Cloud Run
 gcloud run deploy neural-vectors-backend \
   --image gcr.io/YOUR_PROJECT_ID/neural-vectors-backend \
   --platform managed \
@@ -85,6 +86,14 @@ gcloud run deploy neural-vectors-backend \
   --memory 2Gi \
   --timeout 300
 ```
+
+**What happens**: 
+1. `gcloud builds submit` uploads your code to Google Cloud
+2. Google Cloud Build reads your `Dockerfile` and builds the container image on their servers
+3. The built image is stored in Google Container Registry
+4. `gcloud run deploy` deploys that image to Cloud Run
+
+**No Docker installation needed on your machine!** ✨
 
 **Important**: Copy the Cloud Run URL from the output (e.g., `https://neural-vectors-backend-xxxxx.run.app`)
 

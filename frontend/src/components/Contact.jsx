@@ -188,29 +188,11 @@ const Contact = () => {
                   justifyContent: 'center',
                   flexShrink: 0
                 }}>
-                  <Phone size={24} color="var(--brand-primary)" />
-                </div>
-                <div>
-                  <p className="body-medium" style={{ marginBottom: '4px' }}>Phone</p>
-                  <p className="body-large" style={{ color: 'var(--brand-primary)' }}>+1 (555) 123-4567</p>
-                </div>
-              </div>
-              
-              <div style={{ display: 'flex', gap: '16px' }}>
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  background: 'var(--brand-hover)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0
-                }}>
                   <MapPin size={24} color="var(--brand-primary)" />
                 </div>
                 <div>
                   <p className="body-medium" style={{ marginBottom: '4px' }}>Location</p>
-                  <p className="body-large" style={{ color: 'var(--brand-primary)' }}>San Francisco, CA</p>
+                  <p className="body-large" style={{ color: 'var(--brand-primary)' }}>Bangalore, India</p>
                 </div>
               </div>
             </div>

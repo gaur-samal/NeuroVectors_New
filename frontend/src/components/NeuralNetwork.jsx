@@ -42,9 +42,9 @@ const NeuralNetwork = () => {
       }
     }
 
-    // Create particles
+    // Create particles (reduced for performance)
     const particles = [];
-    const particleCount = 80;
+    const particleCount = 40; // Reduced from 80 to 40
     
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());

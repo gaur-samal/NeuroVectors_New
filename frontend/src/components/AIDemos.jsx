@@ -170,9 +170,23 @@ const AIDemos = () => {
             <h3 className="heading-2" style={{ marginBottom: '16px' }}>
               Retrieval Augmented Generation (RAG)
             </h3>
-            <p className="body-medium" style={{ marginBottom: '32px', color: 'var(--text-secondary)' }}>
+            <p className="body-medium" style={{ marginBottom: '16px', color: 'var(--text-secondary)' }}>
               Ask questions and get accurate GenAI responses grounded in our knowledge base
             </p>
+            <div style={{
+              background: 'var(--brand-hover)',
+              padding: '12px 16px',
+              marginBottom: '20px',
+              border: '1px solid var(--brand-primary)',
+              borderLeft: '4px solid var(--brand-primary)'
+            }}>
+              <p className="body-small" style={{ color: 'var(--brand-primary)', marginBottom: '6px', fontWeight: '600' }}>
+                📚 Knowledge Base Includes:
+              </p>
+              <p className="body-small" style={{ color: 'var(--text-secondary)' }}>
+                RAG Systems, LLM Architecture (GPT-5, Claude 3.7, Gemini 2.5), Agentic Frameworks, Model Context Protocol (MCP), Function Calling, Multi-Agent Systems, Vector Databases, and Enterprise GenAI Implementation
+              </p>
+            </div>
             
             <div style={{ display: 'flex', gap: '12px', marginBottom: '32px' }}>
               <input

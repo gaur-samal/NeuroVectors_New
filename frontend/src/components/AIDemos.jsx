@@ -25,27 +25,43 @@ const AIDemos = () => {
     setRagLoading(true);
     setRagLoadingMessage('Waking up GenAI services...');
     
+    // Log for debugging
+    console.log('Backend URL:', BACKEND_URL);
+    console.log('API endpoint:', `${API}/rag/query`);
+    
     try {
       // Simulate initial delay message
-      setTimeout(() => {
-        if (ragLoading) {
-          setRagLoadingMessage('Processing your query with GenAI...');
-        }
+      const timer1 = setTimeout(() => {
+        setRagLoadingMessage('Processing your query with GenAI...');
       }, 2000);
 
       const response = await axios.post(`${API}/rag/query`, {
         query: ragQuery
       }, {
-        timeout: 30000 // 30 second timeout
+        timeout: 30000, // 30 second timeout
+        headers: {
+          'Content-Type': 'application/json'
+        }
       });
+      
+      clearTimeout(timer1);
       setRagResponse(response.data);
       toast.success('Response generated successfully!');
     } catch (error) {
-      console.error('RAG query error:', error);
+      console.error('RAG query full error:', error);
+      console.error('Error response:', error.response);
+      console.error('Error message:', error.message);
+      
       if (error.code === 'ECONNABORTED') {
-        toast.error('Request timeout. Backend might be starting up. Please try again.');
+        toast.error('Request timeout. Backend might be starting up. Please try again in 10 seconds.');
+      } else if (error.response) {
+        // Server responded with error
+        toast.error(`Server error: ${error.response.status}. Please check backend logs.`);
+      } else if (error.request) {
+        // Request made but no response
+        toast.error('Cannot reach backend. Please check if backend is deployed and REACT_APP_BACKEND_URL is correct.');
       } else {
-        toast.error('Failed to process query. Please try again in a moment.');
+        toast.error('Failed to process query. Error: ' + error.message);
       }
     } finally {
       setRagLoading(false);

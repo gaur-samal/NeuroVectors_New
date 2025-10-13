@@ -67,9 +67,9 @@ const NeuralNetwork = () => {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 150) {
+          if (distance < 120) { // Reduced connection distance from 150 to 120
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(0, 255, 209, ${1 - distance / 150})`;
+            ctx.strokeStyle = `rgba(0, 255, 209, ${1 - distance / 120})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);

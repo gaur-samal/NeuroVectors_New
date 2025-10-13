@@ -19,10 +19,10 @@ const Services = () => {
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '100px' }}>
           <h2 className="display-large" style={{ marginBottom: '24px' }}>
-            Our <span style={{ color: 'var(--brand-primary)' }}>AI Services</span>
+            Our <span style={{ color: 'var(--brand-primary)' }}>GenAI Services</span>
           </h2>
           <p className="body-large" style={{ color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-            End-to-end AI transformation services from strategy to deployment
+            End-to-end GenAI transformation services from strategy to deployment
           </p>
         </div>
         

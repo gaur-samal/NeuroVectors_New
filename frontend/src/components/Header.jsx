@@ -18,7 +18,7 @@ const Header = () => {
       />
       <nav className="dark-nav">
         <a href="#services" className="dark-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Services</a>
-        <a href="#demos" className="dark-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('demos'); }}>AI Demos</a>
+        <a href="#demos" className="dark-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('demos'); }}>GenAI Demos</a>
         <a href="#about" className="dark-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a>
         <a href="#contact" className="dark-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
       </nav>

@@ -1,6 +1,7 @@
-import React from 'react';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import React, { useState } from 'react';
+import { Linkedin } from 'lucide-react';
 import '../styles/darkTheme.css';
+import { toast } from 'sonner';
 
 const Footer = () => {
   return (

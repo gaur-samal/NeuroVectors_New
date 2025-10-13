@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowRight, Brain, Cpu, Sparkles } from 'lucide-react';
-import Lottie from 'lottie-react';
 import '../styles/darkTheme.css';
 
 const Hero = () => {

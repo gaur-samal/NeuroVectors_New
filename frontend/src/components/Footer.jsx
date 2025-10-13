@@ -105,8 +105,22 @@ const Footer = () => {
             © 2025 NeuralVectors LLP. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: '24px' }}>
-            <a href="#" className="body-small" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Privacy Policy</a>
-            <a href="#" className="body-small" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Terms of Service</a>
+            <a 
+              href="#" 
+              onClick={(e) => { e.preventDefault(); setShowPrivacyPolicy(true); }} 
+              className="body-small" 
+              style={{ color: 'var(--text-muted)', textDecoration: 'none', cursor: 'pointer' }}
+            >
+              Privacy Policy
+            </a>
+            <a 
+              href="#" 
+              onClick={(e) => { e.preventDefault(); setShowTermsOfService(true); }} 
+              className="body-small" 
+              style={{ color: 'var(--text-muted)', textDecoration: 'none', cursor: 'pointer' }}
+            >
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>

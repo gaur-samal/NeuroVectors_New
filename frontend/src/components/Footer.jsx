@@ -73,7 +73,7 @@ const Footer = () => {
               <a href="#about" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>About Us</a>
               <a href="#demos" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>AI Demos</a>
               <a href="#contact" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>Contact</a>
-              <a href="#" className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>Careers</a>
+              <a href="#" onClick={handleCareersClick} className="body-medium" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}>Careers</a>
             </div>
           </div>
           

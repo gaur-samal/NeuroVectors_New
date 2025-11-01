@@ -11,11 +11,22 @@ const Header = () => {
 
   return (
     <header className="dark-header">
-      <img 
-        src="https://customer-assets.emergentagent.com/job_1a5cfbe2-9845-4942-bcde-bfc48ffd0c5e/artifacts/ftjklk9b_Logo.png" 
-        alt="Neural Vectors Logo" 
-        className="dark-logo"
-      />
+      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <img 
+          src="https://customer-assets.emergentagent.com/job_1a5cfbe2-9845-4942-bcde-bfc48ffd0c5e/artifacts/ftjklk9b_Logo.png" 
+          alt="Neural Vectors Logo" 
+          className="dark-logo"
+        />
+        <span style={{
+          fontSize: '24px',
+          fontWeight: '600',
+          color: 'var(--text-primary)',
+          letterSpacing: '1px',
+          fontFamily: 'Kode Mono, monospace'
+        }}>
+          NEURALVECTORS
+        </span>
+      </div>
       <nav className="dark-nav">
         <a href="#services" className="dark-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Services</a>
         <a href="#demos" className="dark-nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('demos'); }}>GenAI Demos</a>

@@ -63,19 +63,25 @@ const Header = () => {
           style={{ position: 'relative', display: 'inline-block' }}
           onMouseEnter={() => setShowEventsDropdown(true)}
           onMouseLeave={() => setShowEventsDropdown(false)}
-          onClick={() => setShowEventsDropdown(!showEventsDropdown)}
         >
-          <a 
-            href="/events" 
+          <span 
             className="dark-nav-link" 
-            onClick={handleEventsClick}
-            style={{ display: 'flex', alignItems: 'center', gap: '5px' }}
+            onClick={(e) => {
+              e.preventDefault();
+              setShowEventsDropdown(!showEventsDropdown);
+            }}
+            style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '5px',
+              cursor: 'pointer'
+            }}
           >
             Events
             <span style={{ fontSize: '12px', transition: 'transform 0.3s ease', transform: showEventsDropdown ? 'rotate(180deg)' : 'rotate(0deg)' }}>
               ▼
             </span>
-          </a>
+          </span>
           
           {showEventsDropdown && (
             <div style={{
@@ -96,8 +102,9 @@ const Header = () => {
               <a
                 href="/events"
                 onClick={(e) => { 
-                  e.preventDefault(); 
-                  handleEventsClick(e);
+                  e.preventDefault();
+                  setShowEventsDropdown(false);
+                  navigate('/events');
                 }}
                 style={{
                   display: 'block',
@@ -107,7 +114,8 @@ const Header = () => {
                   fontSize: '14px',
                   fontFamily: 'Kode Mono, monospace',
                   transition: 'all 0.3s ease',
-                  borderLeft: '3px solid transparent'
+                  borderLeft: '3px solid transparent',
+                  cursor: 'pointer'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.background = 'rgba(0, 255, 255, 0.1)';
@@ -127,8 +135,9 @@ const Header = () => {
               <a
                 href="/events"
                 onClick={(e) => { 
-                  e.preventDefault(); 
-                  handleEventsClick(e);
+                  e.preventDefault();
+                  setShowEventsDropdown(false);
+                  navigate('/events');
                 }}
                 style={{
                   display: 'block',
@@ -138,7 +147,8 @@ const Header = () => {
                   fontSize: '14px',
                   fontFamily: 'Kode Mono, monospace',
                   transition: 'all 0.3s ease',
-                  borderLeft: '3px solid transparent'
+                  borderLeft: '3px solid transparent',
+                  cursor: 'pointer'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.background = 'rgba(0, 255, 255, 0.1)';

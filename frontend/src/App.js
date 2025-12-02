@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import AIDemos from "./components/AIDemos";
 import About from "./components/About";
+import Events from "./components/Events";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { Toaster } from "./components/ui/sonner";

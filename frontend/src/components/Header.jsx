@@ -6,6 +6,26 @@ const Header = () => {
   const [showEventsDropdown, setShowEventsDropdown] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const dropdownTimeoutRef = React.useRef(null);
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    setShowEventsDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setShowEventsDropdown(false);
+    }, 200);
+  };
+
+  const handleEventsClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setShowEventsDropdown(!showEventsDropdown);
+  };
 
   const scrollToSection = (id) => {
     if (location.pathname !== '/') {

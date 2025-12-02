@@ -65,18 +65,28 @@ function App() {
     );
   }
 
-  return (
-    <div className="App">
+  const HomePage = () => (
+    <>
       <Header />
       <Hero />
       <Services />
       <AIDemos />
       <About />
-      <Events />
       <Contact />
       <Footer />
-      <Toaster />
-    </div>
+    </>
+  );
+
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/events" element={<EventsPage />} />
+        </Routes>
+        <Toaster />
+      </div>
+    </Router>
   );
 }
 

@@ -44,7 +44,7 @@ const Footer = () => {
               Leading GenAI consulting and development firm specializing in Generative AI solutions and intelligent applications.
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <a href="https://linkedin.com/company/neuralvectors" target="_blank" rel="noopener noreferrer" style={{
+              <a href="https://www.linkedin.com/company/neuralvectors-technologies/" target="_blank" rel="noopener noreferrer" style={{
                 width: '40px',
                 height: '40px',
                 background: 'var(--brand-hover)',

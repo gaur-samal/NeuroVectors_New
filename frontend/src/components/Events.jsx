@@ -381,7 +381,7 @@ const Events = () => {
                     flexWrap: 'wrap'
                   }}>
                     <button
-                      onClick={() => setShowRegistrationModal(true)}
+                      onClick={() => window.open(event.registrationLink, '_blank')}
                       style={{
                         flex: 1,
                         padding: '15px 30px',

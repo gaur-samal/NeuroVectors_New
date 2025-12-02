@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import EventRegistration from './EventRegistration';
 import '../styles/darkTheme.css';
 
 const Events = () => {
   const [showPastEventsPopup, setShowPastEventsPopup] = useState(false);
-  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [selectedView, setSelectedView] = useState('upcoming'); // 'upcoming' or 'past'
 
   // Listen for custom event from Header dropdown

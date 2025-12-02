@@ -445,11 +445,6 @@ const Events = () => {
         )}
       </div>
 
-      {/* Event Registration Modal */}
-      {showRegistrationModal && (
-        <EventRegistration onClose={() => setShowRegistrationModal(false)} />
-      )}
-
       <style>{`
         @keyframes fadeInUp {
           from {
@@ -493,6 +488,38 @@ const Events = () => {
           }
           to {
             transform: rotate(360deg);
+          }
+        }
+
+        @keyframes gradientShift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        @keyframes glow {
+          0%, 100% {
+            filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+          }
+          50% {
+            filter: brightness(1.5) drop-shadow(0 0 20px rgba(0, 255, 255, 0.7));
+          }
+        }
+
+        @keyframes sparkle {
+          0%, 100% {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+          }
+          50% {
+            opacity: 0.7;
+            transform: scale(1.2) rotate(180deg);
           }
         }
       `}</style>

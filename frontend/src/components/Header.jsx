@@ -75,15 +75,12 @@ const Header = () => {
         {/* Events Dropdown */}
         <div 
           style={{ position: 'relative', display: 'inline-block' }}
-          onMouseEnter={() => setShowEventsDropdown(true)}
-          onMouseLeave={() => setShowEventsDropdown(false)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <span 
             className="dark-nav-link" 
-            onClick={(e) => {
-              e.preventDefault();
-              setShowEventsDropdown(!showEventsDropdown);
-            }}
+            onClick={handleEventsClick}
             style={{ 
               display: 'flex', 
               alignItems: 'center', 

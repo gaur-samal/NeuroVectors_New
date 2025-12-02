@@ -25,12 +25,6 @@ const Header = () => {
     setShowEventsDropdown(false);
   };
 
-  const handleEventsClick = (e) => {
-    e.preventDefault();
-    setShowEventsDropdown(false);
-    navigate('/events');
-  };
-
   const handleLogoClick = () => {
     navigate('/');
   };

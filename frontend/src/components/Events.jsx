@@ -224,7 +224,7 @@ const Events = () => {
                 {/* Event Image */}
                 <div style={{
                   width: '100%',
-                  height: '300px',
+                  height: '400px',
                   overflow: 'hidden',
                   position: 'relative'
                 }}>
@@ -234,11 +234,12 @@ const Events = () => {
                     style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover',
+                      objectFit: 'contain',
+                      background: 'var(--bg-primary)',
                       transition: 'transform 0.4s ease'
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.transform = 'scale(1.05)';
+                      e.target.style.transform = 'scale(1.02)';
                     }}
                     onMouseLeave={(e) => {
                       e.target.style.transform = 'scale(1)';
@@ -248,26 +249,67 @@ const Events = () => {
 
                 {/* Event Content */}
                 <div style={{ padding: '30px' }}>
+                  {/* Flashy Event Title */}
+                  <div style={{
+                    marginBottom: '25px',
+                    textAlign: 'center',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      gap: '15px',
+                      marginBottom: '15px',
+                      animation: 'sparkle 2s ease-in-out infinite'
+                    }}>
+                      <span style={{ fontSize: '24px' }}>✨</span>
+                      <span style={{ fontSize: '28px' }}>⭐</span>
+                      <span style={{ fontSize: '24px' }}>✨</span>
+                    </div>
+                    
+                    <h3 style={{
+                      background: 'linear-gradient(135deg, #FFD700, #FFA500, #FF69B4, #00FFFF, #FFD700)',
+                      backgroundSize: '200% 200%',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      fontSize: '28px',
+                      fontWeight: '900',
+                      marginBottom: '10px',
+                      lineHeight: '1.3',
+                      textTransform: 'uppercase',
+                      letterSpacing: '2px',
+                      animation: 'gradientShift 3s ease-in-out infinite, glow 2s ease-in-out infinite',
+                      textShadow: '0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(0, 255, 255, 0.3)',
+                      filter: 'brightness(1.2)'
+                    }}>
+                      {event.title}
+                    </h3>
+                    
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      gap: '15px',
+                      marginTop: '15px',
+                      animation: 'sparkle 2s ease-in-out infinite 1s'
+                    }}>
+                      <span style={{ fontSize: '24px' }}>🌟</span>
+                      <span style={{ fontSize: '28px' }}>💫</span>
+                      <span style={{ fontSize: '24px' }}>🌟</span>
+                    </div>
+                  </div>
+
                   <p style={{
                     color: 'var(--brand-primary)',
                     fontSize: '14px',
                     fontWeight: '600',
                     marginBottom: '10px',
                     textTransform: 'uppercase',
-                    letterSpacing: '1px'
+                    letterSpacing: '1px',
+                    textAlign: 'center'
                   }}>
                     {event.subtitle}
                   </p>
-
-                  <h3 style={{
-                    color: 'var(--text-primary)',
-                    fontSize: '24px',
-                    fontWeight: '700',
-                    marginBottom: '15px',
-                    lineHeight: '1.3'
-                  }}>
-                    {event.title}
-                  </h3>
 
                   <p style={{
                     color: 'var(--text-secondary)',

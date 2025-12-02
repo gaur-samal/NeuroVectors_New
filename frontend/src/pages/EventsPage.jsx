@@ -30,6 +30,7 @@ const EventsPage = () => {
   };
 
   const handlePastEventsClick = () => {
+    setSelectedView('past');
     setShowPastEventsPopup(true);
     setTimeout(() => setShowPastEventsPopup(false), 3000);
   };

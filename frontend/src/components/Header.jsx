@@ -1,28 +1,43 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/darkTheme.css';
 
 const Header = () => {
   const [showEventsDropdown, setShowEventsDropdown] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
-    setShowEventsDropdown(false); // Close dropdown after navigation
+    setShowEventsDropdown(false);
   };
 
-  const handleEventsClick = (type) => {
-    scrollToSection('events');
-    // Trigger the appropriate view in Events component via custom event
-    setTimeout(() => {
-      window.dispatchEvent(new CustomEvent('eventViewChange', { detail: type }));
-    }, 500);
+  const handleEventsClick = (e) => {
+    e.preventDefault();
+    setShowEventsDropdown(false);
+    navigate('/events');
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
   };
 
   return (
     <header className="dark-header">
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', cursor: 'pointer' }} onClick={handleLogoClick}>
         <img 
           src="https://customer-assets.emergentagent.com/job_1a5cfbe2-9845-4942-bcde-bfc48ffd0c5e/artifacts/ftjklk9b_Logo.png" 
           alt="Neural Vectors Logo" 
@@ -51,12 +66,9 @@ const Header = () => {
           onClick={() => setShowEventsDropdown(!showEventsDropdown)}
         >
           <a 
-            href="#events" 
+            href="/events" 
             className="dark-nav-link" 
-            onClick={(e) => { 
-              e.preventDefault(); 
-              scrollToSection('events'); 
-            }}
+            onClick={handleEventsClick}
             style={{ display: 'flex', alignItems: 'center', gap: '5px' }}
           >
             Events
@@ -82,10 +94,10 @@ const Header = () => {
               animation: 'dropdownSlide 0.3s ease-out'
             }}>
               <a
-                href="#events"
+                href="/events"
                 onClick={(e) => { 
                   e.preventDefault(); 
-                  handleEventsClick('upcoming'); 
+                  handleEventsClick(e);
                 }}
                 style={{
                   display: 'block',
@@ -113,10 +125,10 @@ const Header = () => {
                 🚀 Upcoming Events
               </a>
               <a
-                href="#events"
+                href="/events"
                 onClick={(e) => { 
                   e.preventDefault(); 
-                  handleEventsClick('past'); 
+                  handleEventsClick(e);
                 }}
                 style={{
                   display: 'block',

@@ -92,7 +92,10 @@ const Header = () => {
               boxShadow: '0 10px 30px rgba(0, 255, 255, 0.3)',
               zIndex: 1000,
               animation: 'dropdownSlide 0.3s ease-out'
-            }}>
+            }}
+            onMouseEnter={() => setShowEventsDropdown(true)}
+            onMouseLeave={() => setShowEventsDropdown(false)}
+            >
               <a
                 href="/events"
                 onClick={(e) => { 

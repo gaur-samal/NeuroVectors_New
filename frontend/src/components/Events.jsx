@@ -7,6 +7,20 @@ const Events = () => {
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [selectedView, setSelectedView] = useState('upcoming'); // 'upcoming' or 'past'
 
+  // Listen for custom event from Header dropdown
+  React.useEffect(() => {
+    const handleEventViewChange = (e) => {
+      if (e.detail === 'past') {
+        handlePastEventsClick();
+      } else {
+        setSelectedView('upcoming');
+      }
+    };
+
+    window.addEventListener('eventViewChange', handleEventViewChange);
+    return () => window.removeEventListener('eventViewChange', handleEventViewChange);
+  }, []);
+
   const upcomingEvents = [
     {
       id: 1,

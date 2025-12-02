@@ -71,6 +71,7 @@ function App() {
       <Services />
       <AIDemos />
       <About />
+      <Events />
       <Contact />
       <Footer />
       <Toaster />

@@ -34,6 +34,7 @@ const Events = () => {
         'Autonomous Agents'
       ],
       image: 'https://customer-assets.emergentagent.com/job_vectors-ai/artifacts/b7oohrmw_NeuralVectors.png',
+      registrationLink: 'https://forms.gle/f6141cxpD1ncWdNK8',
       type: 'webinar'
     }
   ];
